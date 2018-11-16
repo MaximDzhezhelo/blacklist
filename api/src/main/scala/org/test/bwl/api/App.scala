@@ -16,6 +16,7 @@ object App extends HttpApp with DB {
 
     println(">>>" + configs)
     println(">>>" + users)
+    println(">>>" + blackListAccessor.getAll)
 
     //startServer("0.0.0.0", 8080)
   }
@@ -23,3 +24,5 @@ object App extends HttpApp with DB {
   override def routes = pathSingleSlash {
     complete("Hello Akka!")
   }
+
+}
