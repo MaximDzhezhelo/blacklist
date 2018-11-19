@@ -5,8 +5,8 @@ import java.util
 import com.datastax.driver.mapping.Result
 import com.datastax.driver.mapping.annotations.{Accessor, PartitionKey, Query, Table}
 
-@Accessor trait BlackListAccessor {
-  @Query("SELECT * FROM bwl_dict.black_list_rules") def getAll: Result[BlackListRule]
+@Accessor trait BlackListRuleAccessor {
+  @Query("SELECT * FROM bwl_dict.black_list_rules WHERE msisdn = :msisdn") def get(msisdn: String): Result[BlackListRule]
 }
 
 @Table(keyspace = "bwl_dict", name = "black_list_rules", readConsistency = "ONE", writeConsistency = "ONE")
