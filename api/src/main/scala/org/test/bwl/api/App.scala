@@ -12,13 +12,17 @@ object App extends HttpApp with DB {
 
 //    println(blackListRuleMapper.get("380670000001"))
 
-    println(blackListRuleAccessor.get("380670000001").one)
+//    println(blackListRuleAccessor.get("380670000001").one)
 
-    //startServer("0.0.0.0", 8080)
+    startServer("0.0.0.0", 8080)
   }
 
-  override def routes = pathSingleSlash {
-    complete("Hello Akka!")
+//  override def routes = pathSingleSlash {
+//    complete("Hello Akka!")
+//  }
+
+  override def routes = path("api"/"rules"/LongNumber) { msisdn =>
+    complete(s"Hello Akka! and $msisdn" )
   }
 
 }
