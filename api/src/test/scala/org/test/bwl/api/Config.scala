@@ -7,7 +7,7 @@ import org.test.bwl.api.route.ApiRoute
 
 trait Config extends WordSpec with Matchers with ScalatestRouteTest with ApiRoute {
 
-  val responseWWWAuthHeader = HttpChallenge("Basic", Some("hash system"), Map("charset" → "UTF-8"))
+  val responseWWWAuthHeader = HttpChallenge("Basic", Some("bwl"), Map("charset" → "UTF-8"))
   val methodNotAllowed = "HTTP method not allowed, supported methods: GET, HEAD"
   val requiresAuth = "The resource requires authentication, which was not supplied with the request"
   val invalidAuth = "The supplied authentication is invalid"
