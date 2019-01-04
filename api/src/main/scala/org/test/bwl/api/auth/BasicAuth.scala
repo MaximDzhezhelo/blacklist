@@ -21,7 +21,6 @@ trait BasicAuth extends Directives {
   }
 
   def withBasicAuth(f: => Route): Route =
-
     authenticateBasicAsync("bwl", userPassAuthenticator) { user =>
       f
     }
